@@ -1,4 +1,4 @@
-# vue-sample
+# vue-vuex-ts-counter
 
 ## Project setup
 ```
