@@ -24,11 +24,9 @@ export interface Actions {
     // actionName: actionPayloadType
     incAsync: {
         amount: number,
-        delay: number,
     };
     decAsync: {
         amount: number,
-        delay: number,
     };
 }
 
@@ -45,24 +43,20 @@ const mutations: DefineMutations<Mutations, State> = {
     },
 };
 
+const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
+
 const actions: DefineActions<Actions, State, Mutations, Getters> = {
     incAsync({ commit }, payload) {
-        setTimeout(() => {
-            commit('inc', payload);
-        }, payload.delay);
+        return wait().then(() => commit('inc', {amount: payload.amount}));
     },
 
     decAsync({ commit }, payload) {
-        setTimeout(() => {
-            commit('dec', payload);
-        }, payload.delay);
+        return wait().then(() => commit('dec', {amount: payload.amount}));
     },
 };
 
 export const {
-    mapState,
     mapGetters,
-    mapMutations,
     mapActions,
 } = createNamespacedHelpers<State, Getters, Mutations, Actions>('counter');
 

@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div>{{ msg }}</div>
-        <button @click="incAsync({amount: 1, delay: 1000})">+</button>
-        <button @click="decAsync({amount: 1, delay: 2000})">-</button>
-        <div>Count: {{ count }}</div>
+        <div class='msg'>{{ msg }}</div>
+        <button class='inc' @click="incAsync({amount: 1})">+</button>
+        <button class='dec' @click="decAsync({amount: 1})">-</button>
+        <div class='count'>Count: {{ count }}</div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import * as counter from '../store/modules/counter';
+import * as counter from '@/store/modules/counter';
 
 @Component<Counter>({
     computed: {

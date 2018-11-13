@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Todo from './components/Todo.vue';
+import Home from '@/views/Home.vue';
+import Todo from '@/components/Todo.vue';
 
 Vue.use(Router);
 

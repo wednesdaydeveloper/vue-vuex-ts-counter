@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import {counter} from './modules/counter';
-import {todo} from './modules/todo';
+import {counter} from '@/store/modules/counter';
+import {todo} from '@/store/modules/todo';
 
 const debug = process.env.NODE_ENV !== 'production';
 
